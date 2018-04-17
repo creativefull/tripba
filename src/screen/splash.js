@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View
 } from 'react-native';
-import {RkStyleSheet} from 'react-native-ui-kitten';
+import {RkStyleSheet, RkButton, RkTabView, RkTheme} from 'react-native-ui-kitten';
 import GradientButton from '../components/gradientButton/index'
 import Walkthrough from '../components/splash';
 import Walkthrough1 from './splash1';
@@ -31,18 +31,17 @@ export default class WalkthroughScreen extends React.Component {
           <Walkthrough2/>
         </Walkthrough>
         {/* <PaginationIndicator length={2} current={this.state.index}/> */}
-        <GradientButton
-		  rkType='large'
-		  colors={["#089","#088"]}
-          style={styles.button}
-          text="GET STARTED"
-          onPress={() => {
-            this.props.navigation.goBack()
-          }}/>
+		<RkButton rkType="rounded primary large">
+			NEXT
+		</RkButton>
       </View>
     )
   }
 }
+
+RkTheme.setType('RkButton', 'large', {
+	width : 300
+})
 
 let styles = RkStyleSheet.create(theme => ({
   screen: {
