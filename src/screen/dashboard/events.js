@@ -11,9 +11,12 @@ class Events extends Component {
     static navigationOptions = {
         header: null
     }
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
+            titleText: 'Events',
+            label: 'Sawarna',
+
             newsplaces : [{
                 image : require('../../assets/images/dummy/avatar1.jpg'),
                 label : 'Hawaii'
@@ -49,7 +52,7 @@ class Events extends Component {
                         return (
                             <RkButton
                                 rkType="square shadow clear"
-                                style={{width : size, height : size + 30, marginBottom : 0, marginTop : 10}}
+                                style={{width : size, height : size + 30, marginTop : 5}}
                                 onPress={() => {
                                     this.props.navigation.navigate('EventsDetail')
                                 }}
@@ -57,7 +60,9 @@ class Events extends Component {
                                 <ImageBackground
                                     style={styles.boxGambar}
                                     source={require('../../assets/images/dummy/avatar1.jpg')}>
-                                    <Text style={styles.imgbac}>Hawai</Text>
+                                    <View style={{alignItems: 'center', justifyContent: 'center', paddingTop: 185}}>
+                                    <Text>{this.state.label}</Text>
+                                    </View>
                                 </ImageBackground>
                             </RkButton>
                         )
@@ -70,20 +75,25 @@ class Events extends Component {
     render() {
         return (
 
-            <ScrollView style={styles.gambar}>
-                <View style={{padding: 10, paddingBottom: 0, paddingTop: 15}}>
+             <ScrollView>
+                <View style={{alignItems: 'center', paddingBottom: 10, paddingTop: 15}}>
                     <Image style={styles.img} source={require('../../assets/images/trip-logo.png')}/>
-                    <Text style={styles.judul}>Events</Text>
+                </View>
+                <View>
+                     <Text style={{fontSize: 23, fontWeight: 'bold', marginLeft: 20, color: 'black'}}>
+                         {this.state.titleText}
+                     </Text>
                 </View>
                 {this.EventsRender()}
             </ScrollView>
+
         );
     }
 }
 
 const styles = StyleSheet.create({
     gambar : {
-        padding: 0
+        alignItems: 'center'
     },
     gridGambar : {
         flex : 1,
@@ -93,8 +103,7 @@ const styles = StyleSheet.create({
     boxGambar : {
         height: 230,
         flex : 1,
-        margin : 5,
-        flexDirection : 'row'
+        margin : 3
     },
     judul: {
         fontSize: 25,
@@ -113,10 +122,7 @@ const styles = StyleSheet.create({
     img : {
         width: 170,
         height: 22,
-        padding: 2,
-        marginLeft: 100,
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: 2
     }
 })
 

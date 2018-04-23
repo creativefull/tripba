@@ -11,10 +11,11 @@ import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header
 
 export default  class EvenntDetail extends Component {
     
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            scrollParalax : true
+            scrollParalax : true,
+            title: 'Lawang Sewu',
         }
     }
 
@@ -27,8 +28,10 @@ export default  class EvenntDetail extends Component {
                 ref={(ref) => this.paralax}
                 backgroundColor={'#4cd137'}
                 renderStickyHeader={() => (
-                    <View style={{fontSize: 25, fontWeight: 'bold', alignItems: 'center'}}>
-                        <Text style={{fontSize: 20, color: '#ffffff', fontWeight: 'bold', paddingTop: 5}}>Sail Sandeq 2018</Text>
+                    <View style={{alignItems: 'center'}}>
+                        <Text style={{fontSize: 25, color:'#ffffff', fontWeight: 'bold', paddingTop: 5}}>
+                            {this.state.title}
+                        </Text>
                     </View>
                 )}
                 backgroundSpeed={20}
@@ -42,6 +45,10 @@ export default  class EvenntDetail extends Component {
                         <ImageBackground
                             style={styles.img}
                             source={require('../../assets/images/dummy/avatar1.jpg')} >
+                            <View style={{alignItems: 'center', justifyContent: 'center', paddingTop:20}}>
+                                <Text style={{fontSize: 30 , color: '#FFFFFF', fontWeight:'bold'}}>
+                                    {this.state.title}</Text>
+                            </View>
                         </ImageBackground>
                     </View>
                 )}>

@@ -10,9 +10,13 @@ export default class ReportsCategory extends Component {
         header: null
     }
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
+            title: 'Discover',
+            titleText : 'ADVENTER',
+            titleDis: 'Curent By XXX',
+
             newsplaces : [{
                 image : require('../../assets/images/dummy/avatar1.jpg'),
                 label : 'Hawaii'
@@ -85,12 +89,24 @@ export default class ReportsCategory extends Component {
     render() {
         return (
             <ScrollView>
-                <View>
-                    <Image 
+                <View style={{height: 200}}>
+                    <ImageBackground 
                     style={styles.header}
-                    source={require('../../assets/images/dummy/avatar1.jpg')}>
-                    </Image>
+                    source={require('../../assets/images/lawangsewu.jpg')}>
+                    <View style={{ padding: 50 }}>
+                        <Text style={{fontSize: 15, fontWeight: 'bold', color: '#FFFFFF'}}>
+                            {this.state.title}
+                        </Text> 
+                        <Text style={{fontSize: 35, fontWeight: 'bold', color: '#FFFFFF', marginTop: -5, marginBottom:15}}>
+                            {this.state.titleText}
+                        </Text>
+                        <Text style={{fontSize: 12, fontWeight: 'bold',fontStyle:'italic', color: '#f2f2f2'}}>
+                            {this.state.titleDis}
+                        </Text>
+                    </View>
+                    </ImageBackground>
                 </View>
+                
                 <ScrollView>
                     <View style={{padding: 10, paddingBottom:0, paddingTop:20}}>
                         <Text style={styles.judul}>Post Type B</Text>
@@ -108,9 +124,8 @@ export default class ReportsCategory extends Component {
 
 const styles = StyleSheet.create({
     header: {
-       margin:1,
-       width: 356,
-       height: 150
+        flex: 1,
+        height: 100,
     },
     gambar : {
         flex : 1,

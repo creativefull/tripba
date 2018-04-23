@@ -121,7 +121,7 @@ class HomeScreen extends Component {
 
 export default TabNavigator(
   {
-    HomeAp: {
+    Home: {
         screen: HomeScreen,
         navigationOptions : {
             header : null,
@@ -174,7 +174,7 @@ export default TabNavigator(
             backgroundColor : '#333',
         }
     },
-    initialRouteName : "Guides"
+    // initialRouteName : "Guides"
   }
 );
 

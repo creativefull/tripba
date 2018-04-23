@@ -24,7 +24,7 @@ export default class WalkthroughScreen extends React.Component {
   }
 
    changeDashboard(guide_category) {
-    this.props.navigation.navigate('Detail')
+    this.props.navigation.navigate('Home')
   }
 
   render() {
@@ -35,9 +35,9 @@ export default class WalkthroughScreen extends React.Component {
           <Walkthrough2/>
         </Walkthrough>
         {/* <PaginationIndicator length={2} current={this.state.index}/> */}
-		<RkButton rkType="rounded primary large" onPress={this.changeDashboard.bind(this)}>
-			NEXT
-		</RkButton>
+        <RkButton rkType="rounded primary large" onPress={this.changeDashboard.bind(this)}>
+          NEXT
+        </RkButton>
       </View>
     )
   }

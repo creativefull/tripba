@@ -19,7 +19,7 @@ const menu = StackNavigator({
     screen: Router.Home
   }
 }, {
-  initialRouteName : 'Home'
+  // initialRouteName : 'Home'
 })
 
 export default menu 

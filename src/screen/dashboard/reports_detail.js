@@ -14,7 +14,8 @@ export default  class ReportsDetail extends Component {
     constructor() {
         super()
         this.state = {
-            scrollParalax : true
+            scrollParalax : true,
+            title: 'Lawang Sewu',
         }
     }
 
@@ -27,8 +28,10 @@ export default  class ReportsDetail extends Component {
                 ref={(ref) => this.paralax}
                 backgroundColor={'#4cd137'}
                 renderStickyHeader={() => (
-                    <View style={{fontSize: 25, fontWeight: 'bold', alignItems: 'center'}}>
-                        <Text style={{fontSize: 20, color: '#ffffff', fontWeight: 'bold', paddingTop: 5}}>Sail Sandeq 2018</Text>
+                    <View style={{alignItems: 'center'}}>
+                        <Text style={{fontSize: 25, color:'#ffffff', fontWeight: 'bold', paddingTop: 5}}>
+                            {this.state.title}
+                        </Text>
                     </View>
                 )}
                 backgroundSpeed={20}
@@ -42,6 +45,10 @@ export default  class ReportsDetail extends Component {
                         <ImageBackground
                             style={styles.img}
                             source={require('../../assets/images/dummy/avatar1.jpg')} >
+                            <View style={{alignItems: 'center', justifyContent: 'center', paddingTop:20}}>
+                                <Text style={{fontSize: 30 , color: '#FFFFFF', fontWeight:'bold'}}>
+                                    {this.state.title}</Text>
+                            </View>
                         </ImageBackground>
                     </View>
                 )}>
@@ -60,10 +67,10 @@ export default  class ReportsDetail extends Component {
                             </View>
                         </ScrollView>
                     </RkTabView.Tab>
-                    <RkTabView.Tab title={'How To Get There'}> 
+                    <RkTabView.Tab title={'Perjalanan'}> 
                         <Text>Tab 2 Content</Text>
                     </RkTabView.Tab>
-                    <RkTabView.Tab title={'Biaya'}>
+                    <RkTabView.Tab title={'Semarang'}>
                         <Text>Tab 3 Content</Text>
                     </RkTabView.Tab>
                 </RkTabView>

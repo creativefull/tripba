@@ -9,12 +9,13 @@ import { Marker, MapView } from 'react-native-maps';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 
-export default  class Tripopen extends Component {
+export default class Tripopen extends Component {
     
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            scrollParalax : true
+            scrollParalax : true,
+            title: 'Lawang Sewu',
         }
     }
 
@@ -27,8 +28,10 @@ export default  class Tripopen extends Component {
                 ref={(ref) => this.paralax}
                 backgroundColor={'#4cd137'}
                 renderStickyHeader={() => (
-                    <View style={{fontSize: 25, fontWeight: 'bold', alignItems: 'center'}}>
-                        <Text style={{fontSize: 20, color: '#ffffff', fontWeight: 'bold', paddingTop: 5}}>Sail Sandeq 2018</Text>
+                    <View style={{alignItems: 'center'}}>
+                        <Text style={{fontSize: 25, color:'#ffffff', fontWeight: 'bold', paddingTop: 5}}>
+                            {this.state.title}
+                        </Text>
                     </View>
                 )}
                 backgroundSpeed={20}
@@ -42,6 +45,10 @@ export default  class Tripopen extends Component {
                         <ImageBackground
                             style={styles.img}
                             source={require('../../assets/images/dummy/avatar1.jpg')} >
+                            <View style={{alignItems: 'center', justifyContent: 'center', paddingTop:20}}>
+                                <Text style={{fontSize: 30 , color: '#FFFFFF', fontWeight:'bold'}}>
+                                    {this.state.title}</Text>
+                            </View>
                         </ImageBackground>
                     </View>
                 )}>
@@ -60,10 +67,10 @@ export default  class Tripopen extends Component {
                             </View>
                         </ScrollView>
                     </RkTabView.Tab>
-                    <RkTabView.Tab title={'How To Get There'}> 
+                    <RkTabView.Tab title={'Get There'}> 
                         <Text>Tab 2 Content</Text>
                     </RkTabView.Tab>
-                    <RkTabView.Tab title={'Biaya'}>
+                    <RkTabView.Tab title={'Tips & Cost'}>
                         <Text>Tab 3 Content</Text>
                     </RkTabView.Tab>
                 </RkTabView>
