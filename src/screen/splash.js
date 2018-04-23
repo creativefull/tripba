@@ -6,7 +6,7 @@ import {RkStyleSheet, RkButton, RkTabView, RkTheme} from 'react-native-ui-kitten
 import GradientButton from '../components/gradientButton/index'
 import Walkthrough from '../components/splash';
 import Walkthrough1 from './splash1';
-import Walkthrough2 from './splash1';
+import Walkthrough2 from './splash2';
 // import {PaginationIndicator} from '../../components';
 
 export default class WalkthroughScreen extends React.Component {
@@ -23,6 +23,10 @@ export default class WalkthroughScreen extends React.Component {
     this.setState({index})
   }
 
+   changeDashboard(guide_category) {
+    this.props.navigation.navigate('Detail')
+  }
+
   render() {
     return (
       <View style={styles.screen}>
@@ -31,7 +35,7 @@ export default class WalkthroughScreen extends React.Component {
           <Walkthrough2/>
         </Walkthrough>
         {/* <PaginationIndicator length={2} current={this.state.index}/> */}
-		<RkButton rkType="rounded primary large">
+		<RkButton rkType="rounded primary large" onPress={this.changeDashboard.bind(this)}>
 			NEXT
 		</RkButton>
       </View>

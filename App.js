@@ -14,7 +14,12 @@ import Router from './src/index'
 const menu = StackNavigator({
   Splash : {
     screen : Router.Splash
+  },
+  Home : {
+    screen: Router.Home
   }
+}, {
+  initialRouteName : 'Home'
 })
 
-export default menu
+export default menu 
